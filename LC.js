@@ -5,48 +5,47 @@ draw selected images on the canvas, select their colours, then complete the regi
     
 //EventListeners
 
-//document.querySelector('#english').addEventListener("click", english());
-document.querySelector('#spanish').addEventListener("click", spanish());  
+document.querySelector("#english").addEventListener("click", english);
+document.querySelector("#spanish").addEventListener("click", spanish);  
 document.querySelector("#clear").addEventListener("click", clear);
 document.querySelector("#draw").addEventListener("click", draw);
-document.querySelector("#confpassword").addEventListener("change", validate);
+document.querySelector("#cnfpwd").addEventListener('change', validatePassword);
 
 var canvas = document.querySelector("#yourCanvas");
 var ctx = canvas.getContext("2d");
 
+function setColor() {
+  document.querySelector("#hEng").style.color='blue';
+  document.querySelector("#pEng").style.color='blue';
 
-//function english(){
-    //var engDiv = document.querySelector("#eng")
-    //document.getElementById("#english")
-    //pEng = true
-    //hEng = true
-     
-    //if engDiv.innerHTML != true
-    //{
-    //        ("#english").innerHTML = (#Engdiv);
-   // }   
-    //else {
-    //"engDiv";style.display = 'block';
-//}
-  //}
+
+}
+
+function english() {
+    console.log("look here")
+    document.querySelector("#hEng").innerHTML = "Abstract Art Competition";
+    document.querySelector("#pEng").innerHTML = "Enter our Abstract Art Competition!<br> Draw your artwork in the square below.<br> When you are happy with your drawing,<br> complete your registration, attach your masterpiece by choosing your file and then submit.<br> Good luck!! ";
+    setColor();
+}
 
 function spanish() {
-    document.querySelector("hEng").innerHTML = "Concurso de Arte Abstracto";
-    document.querySelector("pEng").innerHTML = "Dibuja tu obra de arte en el cuadro de abajo.<br> Cuando esté satisfecho con su dibujo, seleccione 'Save image' en el Menú de dibujo.<br> Adjunte su obra maestra seleccionando 'Adjuntar imagen', complete sus datos y luego envíe su formulario.<br>¡¡Buena suerte!!";
+    
+    document.querySelector("#hEng").innerHTML = "Concurso de Arte Abstracto";
+    document.querySelector("#pEng").innerHTML = "¡Participa en nuestro concurso de arte abstracto!<br> Dibuja tu obra de arte en el cuadro de abajo.<br> Cuando esté satisfecho con su dibujo,<br> complete su registro, adjunte su obra maestra<br> eligiendo su archivo y luego envíelo.<br>¡¡Buena suerte!! ";
+    document.querySelector("#hEng").style.color='green';
+    document.querySelector("#pEng").style.color='green';
   }
-    "#spanish";style.display = 'block';
-
 
 function draw() {
 
   if (document.querySelector("#shape").value == "circle") {
-
+    ctx.stroke();
     ctx.beginPath();
     ctx.arc(document.querySelector("#xstart").value, document.querySelector("#ystart").value, document.querySelector("#radius").value, 0, 2 * Math.PI);
     ctx.strokeStyle = "black";
     ctx.fillStyle = document.querySelector("#fillPalette").value; 
     ctx.fill();
-    ctx.stroke();
+    
   }
 
   else if (document.querySelector("#shape").value == "quadrilateral") {
@@ -72,17 +71,17 @@ function clear() {
     ctx.fillRect(0, 0, 400, 400);   
 }
 
-
-    function validate(){
-      if(document.querySelector("#password").value != document.querySelector("#confpassword").value) {
-        document.querySelector("#confpassword").setCustomValidity("Passwords Don't Match");
-        document.querySelector("#confpassword").reportValidity();
-        document.querySelector("#password").value ='';
-        document.querySelector("#confpassword").value ='';
-      } 
-      else {
-        document.querySelector("#confpassword").setCustomValidity('');
-        document.querySelector("#confpassword").reportValidity();
-      } 
-    }
+function validatePassword(){
+    if(document.querySelector("#pwd").value != document.querySelector("#cnfpwd").value) {
+      document.querySelector("#cnfpwd").setCustomValidity("Passwords Don't Match");
+      document.querySelector("#cnfpwd").reportValidity();
+      document.querySelector("#pwd").value ='';
+      document.querySelector("#cnfpwd").value ='';
+    } 
+    else {
+      document.querySelector("#cnfpwd").setCustomValidity('');
+      document.querySelector("#cnfpwd").reportValidity();
+    } 
+}
+      
     

@@ -9,13 +9,12 @@
 </head>
 <body>
 
-  <div style = color:blue>
-    <h1 id="hEng" style = text-align:center>Abstract Art Competition</h1>
+  <div>
+    <h1 id="hEng" style = "text-align:center; color:blue">Abstract Art Competition</h1>
     
-    <p id="pEng">Enter our Abstract Art Competition!<br>
+    <p id="pEng" style = "color:blue">Enter our Abstract Art Competition!<br>
     Draw your artwork in the square below.<br>
-    When you are happy with your drawing, select 'Save image" in Drawing Menu.<br>
-    Attach your masterpiece by selecting 'Attach image', complete your details and then submit your form.<br>
+    When you are happy with your drawing,<br> complete your registration, attach your masterpiece by<br> choosing your file and then submit.<br>
     Good luck!! 
     </p>
     </div>  
@@ -23,7 +22,7 @@
 
   <div>
     <button id="english" type="button" style = "background-color:blue; color:white">English</input>
-    <button id="spanish" type="button" onclick="spanish()" style = "background-color:green; color:white">Spanish</input>
+    <button id="spanish" type="button"  style = "background-color:green; color:white">Spanish</input>
   </div>
  
   <style>
@@ -125,29 +124,37 @@
 </div>
  
 <div>
-
   <!--Registration Form-->
-  <div style="position:absolute; top:210px; left:500px">
+  <div style="position:absolute; top:230px; left:500px">
 <h2>Registration Form</h2>
 <form id="registrationForm" action="/process.php" target="_blank" method="post">
   <fieldset>
     <legend>Your details</legend>
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="username">Username: </label><br>
-    <input type="text" id="username" name="username" required><br>
-    <label for="password">Password: </label><br>    
-    <input type="password" id="password" class="password" name="password" minlength="8" required><br>
-    <label for="confpassword">Confirm Password: </label><br>
-    <input type="password" id="confpassword" class="password" name="confpassword" minlength="8" required><br>
-    <label for="phone">Phone: </label><br>
-    <input type="number" id="phone" name="phone" "maxlength="10" required><br><br>
+    <label for="userName">Username   </label>
+  <input type="text" name="userName" id="userName" required><br><br>
+
+  <label for="email-address">Email</label>
+  <input type="email" name="email" id="email-address" placeholder="email@email.com" required ><br><br>
+
+  <label for="pwd">Password</label>
+  <input type="password" id="pwd" name="pwd" required ><br><br>
+
+  <label for="cnfpwd">Confirm Password</label>
+  <input type="password" id="cnfpwd" name="pwd" required><br><br>
+
+  <label for="phone">Mobile No</label>
+  <input type="tel" id="phone" name="phone" size = "12" placeholder="9999999999" pattern="[0-9]{10}" ><br><br>
+
+  <label for="upload"> </label>
+  <input type="file" name="upload" accept=".png" required><br><br>
+
+  <input type="submit" value="Submit" id="submit"><br><br>
+  <input type="reset" value="Reset"><br>   
+
   </fieldset>
 </form>
 
-<button type="attach" style="background-color:rgba(42, 134, 233, 0.704)" form="registrationForm" value="attach">Attach image</button>
-<button type="submit" style="background-color:rgba(42, 134, 233, 0.704)" form="registrationForm" value="Submit">Submit Form</button>
-  </div>
+</div>
 
 </div>
 
