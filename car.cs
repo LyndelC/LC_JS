@@ -1,10 +1,13 @@
 ﻿using System;
 
 namespace MyApplication
-{ 
-        class Car : Vehicle
+
+
+{
+    public class Car : Vehicle      // derived class
     {
-        public string bodyType;
+
+        public string bodyType;     // car fields
         public string carColour;
         public string upholstery;
         public int doorNo;
@@ -20,6 +23,12 @@ namespace MyApplication
         this.doorNo = doorNo;
 
 
+    }
+    static void Main(string[] args)
+    { 
+    //Create an object of Car class here and pass a car name and details to the constructor
+    Car car1 = new Car("Station wagon", "Red", "Fabric", 5);
+    Console.WriteLine("Body type is: {0} \n, Car colour is: {1} \n, Upholstery type is: {2} \n, Number of car doors is: {3} \n");
     }
 }
 

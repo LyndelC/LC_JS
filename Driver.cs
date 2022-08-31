@@ -30,6 +30,12 @@ namespace MyApplication
             this.demeritPoints = demeritPoints;
 
         }
+         static void Main(string[] args)
+        {
+            //Create an object of Driver class here and pass a name and age to the constructor
+            Driver driver1 = new Driver("VIC1234567", "John", "Doe", 0412345678, "1 Station Street", "Hometown", "VIC", 1234, "Victoria : NSW : Qld", 6);
 
+            Console.WriteLine("Driver name: {1} + " " + {2} \n, License Number: {0} \n, Mobile: {3} \n, Street: {4} \n, City: {5} \n, State: {6} \n, Postcode: {7}\n, Licensed in States: {8} \n, Demerit Points; {9} \n ", this.driver.firstName, this.driver.lastName, this.driver.licenseNo, this.driver.mobile, this, this.driver.driverStreet, this.driver.driverCity, this.driver.driverState, this.driver.driverPcode, this.driver.licenseStates, this.driver.demeritPoints);
+        }
     }
 }
